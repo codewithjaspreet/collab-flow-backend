@@ -1,0 +1,53 @@
+{
+  "include": ["services", "shared"],
+  "exclude": ["**/__pycache__", "**/node_modules", "**/.venv", "**/uv.lock"],
+  "reportMissingImports": true,
+  "pythonVersion": "3.13",
+  "pythonPlatform": "All",
+  "typeCheckingMode": "basic",
+  "executionEnvironments": [
+    {
+      "root": "services/auth_service",
+      "pythonVersion": "3.13",
+      "pythonPath": "services/auth_service/.venv/bin/python3",
+      "extraPaths": ["services/auth_service/.venv/lib/python3.13/site-packages"]
+    },
+    {
+      "root": "services/user_service",
+      "pythonVersion": "3.13",
+      "venvPath": "services/user_service",
+      "venv": ".venv"
+    },
+    {
+      "root": "services/project_service",
+      "pythonVersion": "3.13",
+      "venvPath": "services/project_service",
+      "venv": ".venv"
+    },
+    {
+      "root": "services/task_service",
+      "pythonVersion": "3.13",
+      "venvPath": "services/task_service",
+      "venv": ".venv"
+    },
+    {
+      "root": "services/comment_service",
+      "pythonVersion": "3.13",
+      "venvPath": "services/comment_service",
+      "venv": ".venv"
+    },
+    {
+      "root": "services/notification_service",
+      "pythonVersion": "3.13",
+      "venvPath": "services/notification_service",
+      "venv": ".venv"
+    },
+    {
+      "root": "services/llm_agent",
+      "pythonVersion": "3.13",
+      "venvPath": "services/llm_agent",
+      "venv": ".venv"
+    }
+  ]
+}
+
