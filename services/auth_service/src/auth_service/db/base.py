@@ -1,0 +1,1 @@
+from auth_service.db.session import Base
