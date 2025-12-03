@@ -1,18 +1,14 @@
-from src.auth_service.db.session import Base
-from sqlalchemy import Column, Integer,String,Boolean,func,DateTime, null
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, func
+from auth_service.db.session import Base
+
 
 class User(Base):
     __tablename__ = "users"
 
-    id = Column[int](Integer, primary_key=True,index=True)
-    full_name = Column(String(100), nullable=False)
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String(100), unique=True, index=True, nullable=False)
+    full_name = Column(String(100), nullable=True)
     hashed_password = Column(String(255), nullable=False)
-    role  = Column(String(50), default="user")
-    is_active = Column(Boolean , default=True)
-    created_at = Column(DateTime(timezone=True),server_default=func.now())
-
-
-
-
-
-
+    role = Column(String(50), default="user")
+    is_active = Column(Boolean, default=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())

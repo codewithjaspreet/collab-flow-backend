@@ -3,7 +3,7 @@ from math import e
 from sqlalchemy import future
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from sqlalchemy.orm import declarative_base
-from core.config import settings
+from auth_service.core.config import settings
 
 # base class for models
 Base = declarative_base()
@@ -12,7 +12,6 @@ Base = declarative_base()
 engine = create_async_engine(
     url=settings.DATABASE_URL,
     echo=True,
-    future=False
 )
 
 # session factory
